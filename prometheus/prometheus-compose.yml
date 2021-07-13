@@ -4,8 +4,8 @@ services:
     image: prom/prometheus:v2.28.0
     container_name: prometheus
     volumes:
-      - /opt/docker/pormetheus/conf:/etc/prometheus
-      - /opt/docker/pormetheus:/prometheus
+      - /opt/docker/prometheus/conf:/etc/prometheus
+      - /opt/docker/prometheus:/prometheus
     ports:
       - 9090:9090
     command: ["--config.file=/etc/prometheus/prometheus.yml", "--storage.tsdb.path=/prometheus", "--web.console.libraries=/usr/share/prometheus/console_libraries", "--web.console.templates=/usr/share/prometheus/consoles" ]
