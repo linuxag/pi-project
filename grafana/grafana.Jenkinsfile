@@ -15,6 +15,7 @@ pipeline
             
             steps{
                    sh '''
+                   pwd
                    mkdir -p /opt/docker/grafana
                    chmod 777 /opt/docker/grafana/
                    '''
@@ -26,6 +27,7 @@ pipeline
             
             steps{
                    sh '''
+                   pwd
                    cd grafana
                    docker-compose -f grafana-compose.yml up -d
                    '''
