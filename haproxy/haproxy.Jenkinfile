@@ -1,0 +1,39 @@
+def git_url = 'https://github.com/newbielinux1/pi-project.git'
+def git_branch = 'main'
+
+pipeline
+{
+    agent
+    {
+        label 'piserver'
+    }
+
+    stages
+    {
+        stage('env-setup')
+        {
+            
+            steps{
+                   sh '''
+                   pwd
+                   mkdir -p /opt/docker/haproxy
+                   chmod 777 /opt/docker/haproxy/
+                   cp haproxy/haproxy.cfg /opt/docker/haproxy/
+                   '''
+               }
+        
+        }
+        stage('start-dockercompose')
+        {
+            
+            steps{
+                   sh '''
+                   pwd
+                   cd haproxy
+                   docker-compose -f haproxy-compose.yml up -d
+                   '''
+               }
+        
+        }
+    }
+}
