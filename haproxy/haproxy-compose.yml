@@ -1,0 +1,11 @@
+version: '3'
+services:
+  haproxy:
+    image: haproxy:lts
+    restart: unless-stopped
+    environment:
+      TZ: "Asia/Kolkata"
+    volumes:
+      - /opt/docker/haproxy/:/usr/local/etc/haproxy
+    ports:
+      - 8888:8888
