@@ -2,6 +2,7 @@ version: '3'
 services:
   prometheus:
     image: prom/prometheus:v2.28.0
+    restart: unless-stopped
     volumes:
       - /opt/docker/prometheus/conf:/etc/prometheus
       - /opt/docker/prometheus:/prometheus
