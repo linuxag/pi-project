@@ -29,6 +29,7 @@ pipeline
                    sh '''
                    pwd
                    cd grafana
+                   docker-compose -f grafana-compose.yml down | exit 0
                    docker-compose -f grafana-compose.yml up -d
                    '''
                }
