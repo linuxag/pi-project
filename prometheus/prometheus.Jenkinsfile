@@ -5,7 +5,7 @@ pipeline
 {
     agent
     {
-        label 'piserver'
+        label 'worker1'
     }
 
     stages
@@ -15,6 +15,7 @@ pipeline
             
             steps{
                    sh '''
+                   pwd
                    mkdir -p /opt/docker/prometheus /opt/docker/prometheus/conf
                    cp prometheus/etc-prometheus.yml /opt/docker/prometheus/conf/prometheus.yml
                    chmod -R 777 /opt/docker/prometheus/
@@ -27,6 +28,7 @@ pipeline
             
             steps{
                    sh '''
+                   pwd
                    cd prometheus
                    docker-compose -f prometheus-compose.yml down | exit 0
                    docker-compose -f prometheus-compose.yml up -d
