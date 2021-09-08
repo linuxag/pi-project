@@ -5,7 +5,7 @@ pipeline
 {
     agent
     {
-        label 'piserver'
+        label 'worker1'
     }
 
     stages
