@@ -15,7 +15,7 @@ pipeline
             
             steps{
                    sh '''
-                   pwd
+                   cd /prometheus
                    mkdir -p /opt/docker/prometheus /opt/docker/prometheus/conf
                    cp prometheus/etc-prometheus.yml /opt/docker/prometheus/conf/prometheus.yml
                    chmod -R 777 /opt/docker/prometheus/
@@ -29,7 +29,7 @@ pipeline
             steps{
                    sh '''
                    pwd
-                   cd prometheus
+                   cd /prometheus
                    docker-compose -f prometheus-compose.yml down | exit 0
                    docker-compose -f prometheus-compose.yml up -d
                    '''
