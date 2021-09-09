@@ -15,7 +15,7 @@ pipeline
             
             steps{
                    sh '''
-                   pwd
+                   cd /grafana
                    mkdir -p /opt/docker/grafana
                    chmod 777 /opt/docker/grafana/
                    '''
