@@ -32,8 +32,8 @@ pipeline
                    cd prometheus
                    whereis docker-compose
                    echo $PATH
-                   docker-compose -f prometheus-compose.yml down | exit 0
-                   docker-compose -f prometheus-compose.yml up -d
+                   /usr/bin/docker-compose -f prometheus-compose.yml down | exit 0
+                   /usr/bin/docker-compose -f prometheus-compose.yml up -d
                    '''
                }
         
