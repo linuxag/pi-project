@@ -8,6 +8,6 @@ services:
       TZ: "Asia/Kolkata"
     volumes:
       - /opt/docker/grafana/:/var/lib/grafana
-      - /opt/docker/grafana/conf:/usr/share/grafana/conf
+      - /opt/docker/grafana/conf:/etc/grafana/grafana.ini
     ports:
       - 3000:3000
