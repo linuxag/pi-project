@@ -10,5 +10,6 @@ services:
     volumes:
       - /opt/docker/grafana/:/var/lib/grafana
       - /opt/docker/grafana/:/etc/grafana
+      - /opt/docker/grafana/:/etc/grafana/grafana.ini
     ports:
       - 3000:3000
