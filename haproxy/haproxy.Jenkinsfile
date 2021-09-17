@@ -17,6 +17,7 @@ pipeline
                    sh '''
                    pwd
                    cd haproxy
+                   pwd
                    mkdir -p /opt/docker/haproxy
                    chmod 777 /opt/docker/haproxy/
                    cp haproxy/haproxy.cfg /opt/docker/haproxy/
