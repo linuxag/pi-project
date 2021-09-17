@@ -1,7 +1,7 @@
 version: '3'
 services:
   grafana:
-    image: grafana/grafana
+    image: grafana/grafana:7.3.2
     container_name: grafana
     restart: unless-stopped
     environment:
@@ -9,5 +9,6 @@ services:
       GF_INSTALL_PLUGINS: "grafana-clock-panel,grafana-simple-json-datasource,simpod-json-datasource,marcusolsson-json-datasource"
     volumes:
       - /opt/docker/grafana/:/var/lib/grafana
+      - /opt/docker/grafana/:/etc/grafana
     ports:
       - 3000:3000
